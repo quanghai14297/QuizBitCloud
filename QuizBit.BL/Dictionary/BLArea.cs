@@ -13,7 +13,23 @@ namespace QuizBit.BL
 
         public bool InsertUpdateArea(Area item)
         {
-            return new DLArea().InsertUpdateObject(item);
+            bool result = new DLArea().InsertUpdateObject(item);
+            if (result && String.IsNullOrEmpty(item.OldIDs))
+            {
+                for (int i = 0; i < item.NumberOfTable; i++)
+                {
+                    TableMapping tableMapping = new TableMapping();
+                    tableMapping.TableID = Guid.NewGuid();
+                    tableMapping.AreaID = item.AreaID;
+                    tableMapping.TableName = String.Format("Bàn {0}", i + 1);
+                    tableMapping.Inactive = false;
+                    tableMapping.SortOrder = i + 1;
+                    DLTableMapping dLTable = new DLTableMapping();
+                    dLTable.InsertUpdateObject(tableMapping);
+                }
+            }
+            
+            return result;
         }
 
         public bool DeleteArea(Guid itemID)

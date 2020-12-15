@@ -25,15 +25,16 @@ namespace Cloud.Controllers
                 }
                 else
                 {
-                    if (objBL.InactiveObject("InventoryItemCategory", "InventoryItemCategoryID", item.OldID))
-                    {
-                        result.Success = new BLInventoryItemCategory().InsertUpdateInventoryItemCategory(item.Data);
-                    }
-                    else
-                    {
-                        result.Success = false;
-                        result.ErrorCode = ErrorCode.ItemNotInactive;
-                    }
+                    result.Success = new BLInventoryItemCategory().InsertUpdateInventoryItemCategory(item.Data);
+                    //if (objBL.InactiveObject("InventoryItemCategory", "InventoryItemCategoryID", item.OldID))
+                    //{
+                    //    result.Success = new BLInventoryItemCategory().InsertUpdateInventoryItemCategory(item.Data);
+                    //}
+                    //else
+                    //{
+                    //    result.Success = false;
+                    //    result.ErrorCode = ErrorCode.ItemNotInactive;
+                    //}
                 }
             }
             catch (Exception ex)

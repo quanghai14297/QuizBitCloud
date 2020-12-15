@@ -25,15 +25,16 @@ namespace Cloud.Controllers
                 }
                 else
                 {
-                    if (objBL.InactiveObject("InventoryItem", "InventoryItemID", item.OldID))
-                    {
-                        result.Success = objBL.InsertUpdateInventoryItem(item.Data);
-                    }
-                    else
-                    {
-                        result.Success = false;
-                        result.ErrorCode = ErrorCode.ItemNotInactive;
-                    }
+                    result.Success = objBL.InsertUpdateInventoryItem(item.Data);
+                    //if (objBL.InactiveObject("InventoryItem", "InventoryItemID", item.OldID))
+                    //{
+                    //    result.Success = objBL.InsertUpdateInventoryItem(item.Data);
+                    //}
+                    //else
+                    //{
+                    //    result.Success = false;
+                    //    result.ErrorCode = ErrorCode.ItemNotInactive;
+                    //}
                 }
             }
             catch (Exception ex)
