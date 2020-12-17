@@ -27,15 +27,16 @@ namespace Cloud.Controllers
                 }
                 else
                 {
-                    if (objBL.InactiveObject("Unit", "UnitID", item.OldID))
-                    {
-                        result.Success = objBL.InsertUpdateUnit(item.Data);
-                    }
-                    else
-                    {
-                        result.Success = false;
-                        result.ErrorCode = ErrorCode.ItemNotInactive;
-                    }
+                    result.Success = objBL.InsertUpdateUnit(item.Data);
+                    //if (objBL.InactiveObject("Unit", "UnitID", item.OldID))
+                    //{
+                        
+                    //}
+                    //else
+                    //{
+                    //    result.Success = false;
+                    //    result.ErrorCode = ErrorCode.ItemNotInactive;
+                    //}
                 }
             }
             catch (Exception ex)

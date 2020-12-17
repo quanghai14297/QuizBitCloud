@@ -18,13 +18,13 @@ namespace Cloud.Controllers
             try
             {
                 var objBL = new BLArea();
-                //if (objBL.CheckCodeExists(item.Data.AreaID, item.Data.AreaName))
-                //{
-                //    result.Success = false;
-                //    result.ErrorCode = ErrorCode.DuplicateCode;
-                //}
-                //else
-                //{
+                if (objBL.CheckCodeExists(item.Data.AreaID, item.Data.AreaName))
+                {
+                    result.Success = false;
+                    result.ErrorCode = ErrorCode.DuplicateCode;
+                }
+                else
+                {
                     result.Success = objBL.InsertUpdateArea(item.Data);
                     //if (objBL.InactiveObject("InventoryItem", "InventoryItemID", item.OldID))
                     //{
@@ -35,7 +35,7 @@ namespace Cloud.Controllers
                     //    result.Success = false;
                     //    result.ErrorCode = ErrorCode.ItemNotInactive;
                     //}
-                //}
+                }
             }
             catch (Exception ex)
             {
