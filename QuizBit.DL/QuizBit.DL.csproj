@@ -58,6 +58,7 @@
     <Compile Include="Common\ConnectSQL.cs" />
     <Compile Include="Dictionary\DLArea.cs" />
     <Compile Include="Dictionary\DLEmployee.cs" />
+    <Compile Include="Dictionary\DLOverview.cs" />
     <Compile Include="Dictionary\DLTableMapping.cs" />
     <Compile Include="Dictionary\DLSAInvoiceDetail.cs" />
     <Compile Include="Dictionary\DLSAInvoice.cs" />

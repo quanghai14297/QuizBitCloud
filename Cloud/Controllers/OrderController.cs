@@ -20,15 +20,16 @@ namespace Cloud.Controllers
 
             try
             {
-                if (dLOrder.checkIfExistOrderNo(item.order))
-                {
-                    result.Success = false;
-                    result.ErrorCode = ErrorCode.DuplicateCode;
-                }
-                else
-                {
-                    result.Success = new BLOrder().InsertUpdateOrderEntity(item);
-                }
+                result.Success = new BLOrder().InsertUpdateOrderEntity(item);
+                //if (dLOrder.checkIfExistOrderNo(item.order))
+                //{
+                //    result.Success = false;
+                //    result.ErrorCode = ErrorCode.DuplicateCode;
+                //}
+                //else
+                //{
+                    
+                //}
 
             }
             catch (Exception ex)

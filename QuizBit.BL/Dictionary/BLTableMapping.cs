@@ -35,5 +35,6 @@ namespace QuizBit.BL
         {
             return new DLTableMapping().GetListObject<TableMapping>();
         }
+        
     }
 }

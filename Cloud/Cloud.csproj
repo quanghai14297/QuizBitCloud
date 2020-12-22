@@ -189,6 +189,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Class\Authen\TokenValidationHandler.cs" />
     <Compile Include="Class\CommonFunction.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SAInvoiceDetailController.cs" />
     <Compile Include="Controllers\SAInvoiceController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -289,6 +291,8 @@
     <Folder Include="Areas\Client\Views\Shared\" />
     <Folder Include="Config\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Employee\" />
+    <Folder Include="Views\Report\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

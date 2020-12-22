@@ -4,6 +4,7 @@ using QuizBit.DL;
 using QuizBit.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace Cloud.Controllers
@@ -106,7 +107,7 @@ namespace Cloud.Controllers
             }
             return result;
         }
-
+        
         [HttpGet]
         [Route("api/TableMapping/GetByAreaID")]
         public object GetTableMappingByAreaID(Guid areaID, String time)
@@ -128,6 +129,40 @@ namespace Cloud.Controllers
             }
             return result;
         }
+        [HttpGet]
+        [Route("api/TableMapping/GetByAreaIDByMobile")]
+        public object GetTableMappingByAreaIDByMobile(Guid areaID, String time)
+        {
+            ServiceResult result = new ServiceResult();
+            List<TableMappingCustom> items;
+            
+            try
+            {
+                DateTime dateRequest = Convert.ToDateTime(time);
+                
 
+                items = new DLTableMapping().GetTableMappingByAreaID(areaID, dateRequest);
+                TableMappingCustom tableMapping = new TableMappingCustom();
+                for (int i = 0; i < 3; i++)
+                {
+                    tableMapping.AreaID = Guid.NewGuid();
+                    tableMapping.TableName = "A.Test";
+                    tableMapping.AreaID = areaID;
+                    tableMapping.SortOrder = 0;
+                    items.Add(tableMapping);
+                }
+                items = items.OrderBy(x => x.SortOrder).ToList();
+                result.Success = true;
+                result.Data = items;
+               
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.WriteLog(ex, SerializeUtil.Serialize(areaID), Request.RequestUri.ToString());
+                result.Success = false;
+                result.ErrorCode = ex.Message;
+            }
+            return result;
+        }
     }
 }
