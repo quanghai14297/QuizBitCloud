@@ -61,6 +61,7 @@
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Overview.cs" />
+    <Compile Include="ParamDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -69,8 +70,12 @@
     </Compile>
     <Compile Include="InventoryItem.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="RepotSalesArea.cs" />
+    <Compile Include="ReportSalesCustomer.cs" />
+    <Compile Include="ReportSalesEmployee.cs" />
     <Compile Include="SAInvoice.cs" />
     <Compile Include="SAInvoiceDetail.cs" />
+    <Compile Include="SAInvoiceViewer.cs" />
     <Compile Include="SendKitchen.cs" />
     <Compile Include="TableMappingCustom.cs" />
     <Compile Include="TableMapping.cs" />

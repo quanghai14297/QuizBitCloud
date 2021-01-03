@@ -30,5 +30,25 @@ namespace Cloud.Controllers
             }
             return result;
         }
+        [HttpPost]
+        [Route("api/Report/getReportSalesCustomer")]
+        public object GetReportSalesCustomer([FromBody] ParamDate date)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+                ReportSalesCustomer items;
+                var objBL = new BLReport();
+                items = objBL.GetReportSalesCustomer(date);
+                result.Data = items;
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.WriteLog(ex, "", Request.RequestUri.ToString());
+                result.Success = false;
+                result.ErrorCode = ex.Message;
+            }
+            return result;
+        }
     }
 }
