@@ -214,7 +214,7 @@ namespace QuizBit.DL
         /// <returns></returns>
         public bool CheckObjectIsExistsByOneCondition<T, G>(T objectID, string conditionParam, G condition)
         {
-            string query = "IF EXISTS (SELECT * FROM " + TableName + " WHERE " + ObjectIDParam.Replace("@", "") + " != '" + objectID + "' AND " + conditionParam + " = ";
+            string query = "IF EXISTS (SELECT * FROM " + TableName + " WHERE " + ObjectIDParam.Replace("@", "") + " != '" + objectID + "' AND Inactive=0 And " + conditionParam + " = ";
             if (condition.GetType() == typeof(string))
             {
                 query += "N" + "'" + condition + "'";

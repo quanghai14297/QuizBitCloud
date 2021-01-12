@@ -9,9 +9,9 @@ namespace QuizBit.Entity
     public class ReportSalesCustomer
     {
         public string CustomerCode { get; set; }
-        public float TotalAmount { get; set; }
-        public float TotalVATAmount { get; set; }
-        public float TotalSaleAmount { get; set; }
+        public decimal TotalAmount { get; set; }
+        public decimal TotalVATAmount { get; set; }
+        public decimal TotalSaleAmount { get; set; }
         public string CustomerName { get; set; }
     }
 }

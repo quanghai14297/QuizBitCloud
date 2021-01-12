@@ -8,5 +8,12 @@ namespace QuizBit.Entity
 {
     public class SAInvoiceViewer
     {
+        public Guid RefID { get; set; }
+        public string RefNo { get; set; }
+        public DateTime RefDate { get; set; }
+        public string CustomerName { get; set; }
+        public decimal TotalAmount { get; set; }
+        public decimal TotalVATAmount { get; set; }
+        public decimal TotalSaleAmount { get; set; }
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="Dictionary\DLEmployee.cs" />
     <Compile Include="Dictionary\DLOverview.cs" />
     <Compile Include="Dictionary\DLReport.cs" />
+    <Compile Include="Dictionary\DLRole.cs" />
     <Compile Include="Dictionary\DLTableMapping.cs" />
     <Compile Include="Dictionary\DLSAInvoiceDetail.cs" />
     <Compile Include="Dictionary\DLSAInvoice.cs" />

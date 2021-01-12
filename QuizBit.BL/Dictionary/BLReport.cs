@@ -14,5 +14,15 @@ namespace QuizBit.BL
         {
             return new DLReport().GetReportSalesCustomer(date);
         }
+        public ReportSalesArea GetReportSalesArea(ParamDate date)
+        {
+            return new DLReport().GetReportSalesArea(date);
+        }
+        public SAInvoiceViewer GetReportSales(ParamDate date)
+        {
+            return new DLReport().GetReportSales(date);
+        }
+
     }
+    
 }

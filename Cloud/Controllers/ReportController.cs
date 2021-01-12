@@ -50,5 +50,46 @@ namespace Cloud.Controllers
             }
             return result;
         }
+        [HttpPost]
+        [Route("api/Report/getReportSalesArea")]
+        public object GetReportSalesArea([FromBody] ParamDate date)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+                ReportSalesArea items;
+                var objBL = new BLReport();
+                items = objBL.GetReportSalesArea(date);
+                result.Data = items;
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.WriteLog(ex, "", Request.RequestUri.ToString());
+                result.Success = false;
+                result.ErrorCode = ex.Message;
+            }
+            return result;
+        }
+        [HttpPost]
+        [Route("api/Report/getReportSales")]
+        public object GetReportSales([FromBody] ParamDate date)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+                SAInvoiceViewer items;
+                var objBL = new BLReport();
+                items = objBL.GetReportSales(date);
+                result.Data = items;
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.WriteLog(ex, "", Request.RequestUri.ToString());
+                result.Success = false;
+                result.ErrorCode = ex.Message;
+            }
+            return result;
+        }
+        
     }
 }

@@ -52,7 +52,28 @@ namespace QuizBit.Contract
             }
             return table;
         }
+        public static DataTable ConvertItemToDataTable<T>(this T data)
+        {
+            PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable(typeof(T).Name);
+            for (int i = 0; i < props.Count; i++)
+            {
+                PropertyDescriptor prop = props[i];
+                if (prop.PropertyType.GenericTypeArguments.Count() == 0)
+                    table.Columns.Add(prop.Name, prop.PropertyType);
+                else
+                    table.Columns.Add(prop.Name, prop.PropertyType.GenericTypeArguments[0]);
+            }
+            object[] values = new object[props.Count];
 
+            for (int i = 0; i < values.Length; i++)
+            {
+                values[i] = props[i].GetValue(data);
+            }
+            table.Rows.Add(values);
+
+            return table;
+        }
         /// <summary>
         /// Chuyển đổi thông tin từ dataRow sang object
         /// </summary>

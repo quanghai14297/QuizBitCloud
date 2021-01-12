@@ -32,5 +32,24 @@ namespace Cloud.Controllers
             }
             return result;
         }
+        [HttpPost]
+        [Route("api/Employee/Delete")]
+        public object DeleteEmployee([FromBody] Guid itemID)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+                
+                    result.Success = new BLEmployee().DeleteEmployee(itemID);
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.WriteLog(ex, SerializeUtil.Serialize(itemID), Request.RequestUri.ToString());
+                result.Success = false;
+                result.ErrorCode = ex.Message;
+            }
+            return result;
+        }
+
     }
 }

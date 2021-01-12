@@ -31,5 +31,7 @@ namespace QuizBit.Entity
         public DateTime ReceiveDate { get; set; }
         public DateTime TerminationDate { get; set; }
         public string ReasonTermination { get; set; }
+        public string GenderDisplay { get; set; }
+        public string JobStatusDisplay { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizBit.Entity
 {
-    public class ReportSalesEmployee
+    public class ReportSalesArea
     {
         public string AreaName { get; set; }
         public string TableName { get; set; }

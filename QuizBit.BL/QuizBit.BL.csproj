@@ -52,6 +52,7 @@
     <Compile Include="Dictionary\BLEmployee.cs" />
     <Compile Include="Dictionary\BLOverview.cs" />
     <Compile Include="Dictionary\BLReport.cs" />
+    <Compile Include="Dictionary\BLRole.cs" />
     <Compile Include="Dictionary\BLSAInvoiceDetail.cs" />
     <Compile Include="Dictionary\BLSAInvoice.cs" />
     <Compile Include="Dictionary\BLTableMapping.cs" />

@@ -70,9 +70,10 @@
     </Compile>
     <Compile Include="InventoryItem.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="RepotSalesArea.cs" />
+    <Compile Include="ReportSalesArea.cs" />
     <Compile Include="ReportSalesCustomer.cs" />
     <Compile Include="ReportSalesEmployee.cs" />
+    <Compile Include="Role.cs" />
     <Compile Include="SAInvoice.cs" />
     <Compile Include="SAInvoiceDetail.cs" />
     <Compile Include="SAInvoiceViewer.cs" />
