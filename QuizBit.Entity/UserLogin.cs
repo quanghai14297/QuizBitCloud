@@ -95,5 +95,9 @@ namespace QuizBit.Entity
         /// Người cập nhật
         /// </summary>
         public string ModifiedBy { get; set; }
+        /// <summary>
+        /// Người cập nhật
+        /// </summary>
+        public string RoleName { get; set; }
     }
 }
