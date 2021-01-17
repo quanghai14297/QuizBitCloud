@@ -145,8 +145,9 @@ namespace Cloud.Controllers
                 TableMappingCustom tableMapping = new TableMappingCustom();
                 for (int i = 0; i < 3; i++)
                 {
-                    tableMapping.AreaID = Guid.NewGuid();
                     tableMapping.TableName = "A.Test";
+                    tableMapping.AreaName = items[0].AreaName;
+                    tableMapping.TableID = Guid.NewGuid();
                     tableMapping.AreaID = areaID;
                     tableMapping.SortOrder = 0;
                     items.Add(tableMapping);

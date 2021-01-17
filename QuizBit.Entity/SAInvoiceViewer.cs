@@ -13,7 +13,7 @@ namespace QuizBit.Entity
         public DateTime RefDate { get; set; }
         public string CustomerName { get; set; }
         public decimal TotalAmount { get; set; }
-        public decimal TotalVATAmount { get; set; }
+        public decimal VATAmount { get; set; }
         public decimal TotalSaleAmount { get; set; }
     }
 }
