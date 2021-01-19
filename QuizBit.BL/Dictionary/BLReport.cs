@@ -10,19 +10,23 @@ namespace QuizBit.BL
 {
     public class BLReport
     {
-        public ReportSalesCustomer GetReportSalesCustomer(ParamDate date)
+        public List<ReportSalesCustomer> GetReportSalesCustomer(ParamDate date)
         {
             return new DLReport().GetReportSalesCustomer(date);
         }
-        public ReportSalesArea GetReportSalesArea(ParamDate date)
+        public List<ReportSalesArea> GetReportSalesArea(ParamDate date)
         {
             return new DLReport().GetReportSalesArea(date);
         }
-        public SAInvoiceViewer GetReportSales(ParamDate date)
+        public List<SAInvoiceViewer> GetReportSales(ParamDate date)
         {
             return new DLReport().GetReportSales(date);
         }
-
+        public List<ReportSalesEmployee> GetReportSalesEmployee(ParamDate date)
+        {
+            return new DLReport().GetReportSalesEmployee(date);
+        }
+        
     }
     
 }

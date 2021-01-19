@@ -15,5 +15,7 @@ namespace QuizBit.Entity
         public decimal TotalAmount { get; set; }
         public decimal VATAmount { get; set; }
         public decimal TotalSaleAmount { get; set; }
+        public string InvNo { get; set; }
+        public string TransactionID { get; set; }
     }
 }

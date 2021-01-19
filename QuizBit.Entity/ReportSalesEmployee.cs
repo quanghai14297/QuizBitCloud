@@ -8,8 +8,8 @@ namespace QuizBit.Entity
 {
     public class ReportSalesEmployee
     {
-        public string AreaName { get; set; }
-        public string TableName { get; set; }
+        public string EmployeeCode { get; set; }
+        public string EmployeeName { get; set; }
         public decimal TotalAmount { get; set; }
         public decimal TotalVATAmount { get; set; }
         public decimal TotalSaleAmount { get; set; }

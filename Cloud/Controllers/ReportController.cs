@@ -37,7 +37,7 @@ namespace Cloud.Controllers
             ServiceResult result = new ServiceResult();
             try
             {
-                ReportSalesCustomer items;
+                List < ReportSalesCustomer> items;
                 var objBL = new BLReport();
                 items = objBL.GetReportSalesCustomer(date);
                 result.Data = items;
@@ -57,7 +57,7 @@ namespace Cloud.Controllers
             ServiceResult result = new ServiceResult();
             try
             {
-                ReportSalesArea items;
+                List < ReportSalesArea> items;
                 var objBL = new BLReport();
                 items = objBL.GetReportSalesArea(date);
                 result.Data = items;
@@ -77,7 +77,7 @@ namespace Cloud.Controllers
             ServiceResult result = new ServiceResult();
             try
             {
-                SAInvoiceViewer items;
+                List<SAInvoiceViewer> items;
                 var objBL = new BLReport();
                 items = objBL.GetReportSales(date);
                 result.Data = items;
@@ -90,6 +90,25 @@ namespace Cloud.Controllers
             }
             return result;
         }
-        
+        [HttpPost]
+        [Route("api/Report/getReportSalesEmployee")]
+        public object GetReportSalesEmployee([FromBody] ParamDate date)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+                List < ReportSalesEmployee> items;
+                var objBL = new BLReport();
+                items = objBL.GetReportSalesEmployee(date);
+                result.Data = items;
+            }
+            catch (Exception ex)
+            {
+                CommonFunction.WriteLog(ex, "", Request.RequestUri.ToString());
+                result.Success = false;
+                result.ErrorCode = ex.Message;
+            }
+            return result;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace QuizBit.DL
 {
     public class DLReport : DLBase
     {
-        public ReportSalesCustomer GetReportSalesCustomer(ParamDate date)
+        public List<ReportSalesCustomer> GetReportSalesCustomer(ParamDate date)
         {
             var table = new DataTable();
             var param = CommonFunction.getParameters(date);
@@ -28,7 +28,7 @@ namespace QuizBit.DL
                 }
                 if (CommonFunction.ConvertDataTable<ReportSalesCustomer>(table).Count > 0)
                 {
-                    return CommonFunction.ConvertDataTable<ReportSalesCustomer>(table)[0];
+                    return CommonFunction.ConvertDataTable<ReportSalesCustomer>(table);
                 }
                 else
                 {
@@ -36,7 +36,7 @@ namespace QuizBit.DL
                 }
             }
         }
-        public ReportSalesArea GetReportSalesArea(ParamDate date)
+        public List<ReportSalesArea> GetReportSalesArea(ParamDate date)
         {
             var table = new DataTable();
             var param = CommonFunction.getParameters(date);
@@ -50,9 +50,9 @@ namespace QuizBit.DL
                     sqlAdapter.Fill(table);
                     sqlCommand.Connection.Close();
                 }
-                if (CommonFunction.ConvertDataTable<ReportSalesArea>(table).Count > 0)
+                if (CommonFunction.ConvertDataTable< ReportSalesArea>(table).Count > 0)
                 {
-                    return CommonFunction.ConvertDataTable<ReportSalesArea>(table)[0];
+                    return CommonFunction.ConvertDataTable< ReportSalesArea>(table);
                 }
                 else
                 {
@@ -60,7 +60,7 @@ namespace QuizBit.DL
                 }
             }
         }
-        public SAInvoiceViewer GetReportSales(ParamDate date)
+        public List<SAInvoiceViewer> GetReportSales(ParamDate date)
         {
             var table = new DataTable();
             var param = CommonFunction.getParameters(date);
@@ -76,7 +76,7 @@ namespace QuizBit.DL
                 }
                 if (CommonFunction.ConvertDataTable<SAInvoiceViewer>(table).Count > 0)
                 {
-                    return CommonFunction.ConvertDataTable<SAInvoiceViewer>(table)[0];
+                    return CommonFunction.ConvertDataTable<SAInvoiceViewer>(table);
                 }
                 else
                 {
@@ -84,5 +84,30 @@ namespace QuizBit.DL
                 }
             }
         }
+        public List<ReportSalesEmployee> GetReportSalesEmployee(ParamDate date)
+        {
+            var table = new DataTable();
+            var param = CommonFunction.getParameters(date);
+            using (var sqlAdapter = new SqlDataAdapter())
+            {
+                using (var sqlCommand = CreateSqlCommand("Proc_GetReportSalesEmployee"))
+                {
+                    sqlCommand.Parameters.AddRange(param);
+                    sqlAdapter.SelectCommand = sqlCommand;
+
+                    sqlAdapter.Fill(table);
+                    sqlCommand.Connection.Close();
+                }
+                if (CommonFunction.ConvertDataTable<ReportSalesEmployee>(table).Count > 0)
+                {
+                    return CommonFunction.ConvertDataTable<ReportSalesEmployee>(table);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+        
     }
 }
